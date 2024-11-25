@@ -1,0 +1,593 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    background-color: #f4f9f9;
+    min-height: 100vh;
+    display: flex;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 1rem;
+    text-align: left;
+    color: #333;
+}
+
+.home_content {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+/* Content area styles */
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: white;
+    overflow-y: auto;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* New container for search and table */
+.search-and-table-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Table container */
+.table-container {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+/* Table styling */
+.patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.thin-line {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 5px 0 25px 0;
+}
+
+.patient-table th,
+.patient-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid white;
+}
+
+.patient-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* Striped rows */
+
+.patient-table tr:last-child td {
+    border-bottom: none;
+}
+
+.patient-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.patient-table tbody tr:hover {
+    background-color: #e8f4f8;
+    transition: background-color 0.3s ease;
+    z-index: 20;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color:  #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover and focus effects for the button */
+button:hover {
+    color: black;
+    background-color: #ffffff;
+    border: 1px solid #2c3e50;
+    transition: background-color 0.3s ease;
+    z-index: 20;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .patient-table {
+        font-size: 12px;
+    }
+
+    .patient-table th,
+    .patient-table td {
+        padding: 10px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 15px;
+    }
+
+    .text {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 10px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .patient-table {
+        font-size: 11px;
+    }
+
+    .patient-table th,
+    .patient-table td {
+        padding: 6px 8px;
+    }
+
+    button {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+}
+
+.add-btn {
+    height: 40px;
+    padding: 8px 12px;
+    width: 200px;
+}
+
+/* Search Input Container */
+.InputContainer {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    cursor: text;
+    padding-left: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.InputContainer:focus-within {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Input Field */
+.inputsearch {
+    width: 500px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+}
+
+/* Label for Search Input */
+.labelforsearch {
+    cursor: text;
+    padding: 0px 12px;
+    color: #7f8c8d;
+}
+
+/* Search Icon */
+.searchIcon {
+    width: 13px;
+}
+
+/* Adjusted for alignment in search-container */
+.search-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Basic button styling */
+.btn {
+    padding: 8px 12px;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Pastel green for Profile button */
+.btn-profile {
+    background-color: #000000;
+    /* Pastel green */
+}
+
+
+/* Hover effects */
+.btn:hover {
+    opacity: 0.8;
+}
+
+.save-btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: auto;
+}
+
+
+
+.save-btn:hover {
+    background-color: #357abD;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+        /* Adjust padding for smaller screens */
+    }
+
+    #updateProfileForm {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .save-btn {
+        grid-column: auto;
+        justify-self: start;
+    }
+}
+
+/* Header styles */
+.modal-header {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    /* Thin line under the header */
+    padding-bottom: 10px;
+    /* Adds some space between the text and the line */
+}
+
+.modal-header h2 {
+    font-size: 20px;
+    /* Slightly larger font size for the header */
+    color: #333;
+    margin: 0;
+}
+
+.credentials-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    gap: 10px;
+    /* Space between inputs */
+}
+
+
+/* Specific styles for the credentials input fields */
+.credentials-group input {
+    width: calc(100% + 20px);
+    /* Slightly wider than the container */
+    width: 400px;
+    /* Maximum width for better appearance */
+    margin-left: 10px;
+    /* Adjust left margin to center */
+}
+
+/* Modal styles */
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    /* Override text alignment */
+}
+
+h2 {
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    /* Adds space between text and border */
+    font-size: 24px;
+    color: #333;
+    margin-left: 0;
+    text-align: left;
+    /* Override the inherited center alignment */
+    width: 100%;
+    /* Ensure it takes full width to align left */
+}
+
+
+/* Form Layout */
+#addPatientForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Two columns for inputs */
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* Input Styles */
+.modal-content input[type="text"],
+.modal-content input[type="email"],
+.modal-content input[type="date"],
+.modal-content input[type="tel"],
+.modal-content input[type="number"],
+.modal-content select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    /* Full-width input */
+    transition: border-color 0.3s;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Select Field Style */
+.modal-content select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+/* Full-Width and Two-Column Spans */
+.full-width {
+    grid-column: span 2;
+}
+
+/* Label Styles */
+.modal-content label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Submit Button */
+.modal-content button[type="submit"] {
+    background-color: #4a90e2;
+    width: 150%;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #357ab9;
+}
+.pagination-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.pagination-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #4b5563;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pagination-button:hover {
+    background-color: #e5e7eb;
+}
+
+.pagination-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.pagination-button.next {
+    border-right: none;
+    border-left: 1px solid #e2e8f0;
+}
+
+.pagination-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pagination-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+    color: #4b5563;
+    background-color: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.pagination-link:hover {
+    background-color: #e5e7eb;
+}
+
+.pagination-link.is-current {
+    color: #ffffff;
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #addPatientForm {
+        grid-template-columns: 1fr;
+        /* Stack inputs vertically */
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
+
+    .modal-header h2 {
+
+        font-size: 20px;
+    }
+}

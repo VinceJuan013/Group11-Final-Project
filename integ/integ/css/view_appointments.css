@@ -1,0 +1,367 @@
+
+/* Style for the container holding sidebar and content */
+.appointment-container {
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 100vh;  /* Full viewport height */
+}
+
+
+h1 {
+    color: #2c3e50;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Content styling */
+.appointment-content {
+    max-height:100vh; /* Set the desired height for scroll area */
+    overflow-y: auto;  /* Enable vertical scrolling */
+    flex-grow: 1; 
+    padding: 30px;  
+    background-color: #fff;  
+    border-top-left-radius: 15px;
+    border-bottom-left-radius:15px;
+}
+
+.appointment-content::-webkit-scrollbar {
+    width: 6px; /* Customize scrollbar width */
+}
+
+.appointment-content::-webkit-scrollbar-thumb {
+    background-color: #b0bec5; /* Customize scrollbar color */
+    border-radius: 1px;
+}
+.appointment-content::-webkit-scrollbar-track {
+    background: transparent; /* Transparent or minimal track */
+}
+
+
+.appointment-thin-line {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+/* Tabs styling */
+.tabs {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab.active {
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+}
+
+.tab-content {
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Table styling */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.appointment-table::-webkit-scrollbar {
+    width: 1px; /* Thin scrollbar */
+}
+
+.appointment-table::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Subtle thumb color (light gray) */
+    border-radius: 1px; /* Slight rounding for the scrollbar thumb */
+}
+
+.appointment-table::-webkit-scrollbar-track {
+    background: transparent; /* Transparent or minimal track */
+}
+
+/* Table cells */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: normal; 
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+}
+
+/* Table header styling */
+th {
+    background-color: #506A88;
+    color: white;
+    font-weight: bold;
+    white-space: normal; /* Ensure header text wraps */
+}
+
+/* Cancel button styling */
+.cancel-btn {
+    background-color: #ff4d4d; 
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color:  #ddd;
+    color: #000;
+}
+.cancel-btn:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+.cancel-btn:disabled:hover {
+    background-color: #cccccc;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 10px;
+    padding: 0; /* Set to 0 to avoid extra space */
+    background-color: #f4f9f9;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.calendar-header {
+    grid-column: span 7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.calendar-day, .calendar-date {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.calendar-day {
+    background-color: #b8cfe6;
+    font-weight: bold;
+}
+
+.calendar-date {
+    height: 70px;
+    cursor: pointer;
+}
+
+.calendar-dates {
+    display: contents;
+}
+
+.calendar-date:hover {
+    background-color: #e6f2ff;
+}
+
+.calendar-date.selected {
+    background-color: #3085d6; /* Highlight background color */
+    color: white; /* Change text color to white for better contrast */
+}
+
+.selected {
+    background-color: #3085d6; /* Highlight color */
+    color: white; /* Text color */
+}
+
+.slots-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    padding: 20px;
+}
+
+#slotsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 290px;
+    overflow-y: auto; 
+    padding-right: 15px; 
+}
+#slotsContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+#slotsContainer::-webkit-scrollbar-thumb {
+    background-color: #b0bec5; 
+    border-radius: 10px;
+}
+
+
+#slotsContainer button {
+    height: 80px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 12px 15px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+#slotsContainer button:hover {
+    background-color: #e9ecef;
+}
+
+#slotsContainer button.selected {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #3a80d2;
+}
+
+#slotsContainer button:disabled {
+    background-color: #f1f3f5;
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.time {
+    font-weight: bold;
+}
+
+.availability {
+    float: right;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+#selectedTimeSlot {
+    display: none;
+}
+
+.calendar-date.disabled {
+    color: #ccc;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+    .appointment-container {
+        flex-direction: column;  
+    }
+    
+    .sidebar {
+        width: 100%;  
+    }
+    
+    .appointment-content {
+        width: 100%;  
+    }
+    
+    /* Make the table scrollable on small screens */
+    .appointment-table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    th, td {
+        white-space: nowrap; 
+    }
+
+}
+
+/* For extra small screens */
+@media screen and (max-width: 480px) {
+    /* Stack table rows */
+    .appointment-table, th, td {
+        display: block;
+        width: 100%;
+    }
+
+    th, td {
+        box-sizing: border-box;
+        text-align: left;
+        padding: 10px;
+        display: block;
+        border: none;
+    }
+
+    th {
+        background-color: transparent;
+        color: #2c3e50;
+        font-weight: bold;
+    }
+
+    td {
+        border-bottom: 1px solid #ddd;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    /* Make appointment_id bold on extra small screens */
+    td.appointment-id {
+        font-weight: bold; /* Ensure the appointment_id is bold */
+    }
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 1200px) {
+    .appointment-table {
+        table-layout: fixed; 
+    }
+    
+    th, td {
+        white-space: normal;
+        font-size: 16px; 
+    }
+  
+    th, td {
+        padding: 16px;
+    }
+}

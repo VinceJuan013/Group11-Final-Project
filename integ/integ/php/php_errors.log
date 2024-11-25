@@ -1,0 +1,108 @@
+[03-Nov-2024 16:14:22 Europe/Berlin] POST Data: Array
+(
+    [patient_id] => 50
+    [toothNumber] => 2
+    [treatment] => Braces
+    [date] => 2024-11-03
+    [status] => Healthy
+    [progress] => In Progress
+    [notes] => dasdasdsadasd
+    [treatment_id] => 22
+)
+
+[03-Nov-2024 16:14:22 Europe/Berlin] Sanitized Data: Array
+(
+    [treatment_id] => 22
+    [patient_id] => 50
+    [toothNumber] => 2
+    [treatment] => Braces
+    [date] => 2024-11-03
+    [status] => Healthy
+    [progress] => In Progress
+    [notes] => dasdasdsadasd
+)
+
+[03-Nov-2024 16:14:22 Europe/Berlin] Update Query: 
+        UPDATE treatments 
+        SET tooth_number = ?, 
+            treatment = ?, 
+            date = ?, 
+            status = ?, 
+            progress = ?,
+            notes = ?
+        WHERE treatment_id = ? AND patient_id = ?
+    
+[03-Nov-2024 16:14:22 Europe/Berlin] Tooth Data Query: 
+        INSERT INTO tooth_data (patient_id, tooth_number, status, last_checked)
+        VALUES (?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE 
+            status = VALUES(status),
+            last_checked = VALUES(last_checked)
+    
+[03-Nov-2024 16:14:22 Europe/Berlin] Success Response: Array
+(
+    [success] => 1
+    [message] => Treatment updated successfully
+    [affected_rows] => 1
+    [treatment_id] => 22
+)
+
+[03-Nov-2024 16:14:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt object is already closed in C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php:154
+Stack trace:
+#0 C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php(154): mysqli_stmt->close()
+#1 {main}
+  thrown in C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php on line 154
+[03-Nov-2024 16:15:04 Europe/Berlin] POST Data: Array
+(
+    [patient_id] => 50
+    [toothNumber] => 15
+    [treatment] => Braces
+    [date] => 2024-11-03
+    [status] => Missing
+    [progress] => In Progress
+    [notes] => hahahahahu
+    [treatment_id] => 25
+)
+
+[03-Nov-2024 16:15:04 Europe/Berlin] Sanitized Data: Array
+(
+    [treatment_id] => 25
+    [patient_id] => 50
+    [toothNumber] => 15
+    [treatment] => Braces
+    [date] => 2024-11-03
+    [status] => Missing
+    [progress] => In Progress
+    [notes] => hahahahahu
+)
+
+[03-Nov-2024 16:15:04 Europe/Berlin] Update Query: 
+        UPDATE treatments 
+        SET tooth_number = ?, 
+            treatment = ?, 
+            date = ?, 
+            status = ?, 
+            progress = ?,
+            notes = ?
+        WHERE treatment_id = ? AND patient_id = ?
+    
+[03-Nov-2024 16:15:04 Europe/Berlin] Tooth Data Query: 
+        INSERT INTO tooth_data (patient_id, tooth_number, status, last_checked)
+        VALUES (?, ?, ?, ?)
+        ON DUPLICATE KEY UPDATE 
+            status = VALUES(status),
+            last_checked = VALUES(last_checked)
+    
+[03-Nov-2024 16:15:04 Europe/Berlin] Success Response: Array
+(
+    [success] => 1
+    [message] => Treatment updated successfully
+    [affected_rows] => 1
+    [treatment_id] => 25
+)
+
+[03-Nov-2024 16:15:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: mysqli_stmt object is already closed in C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php:154
+Stack trace:
+#0 C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php(154): mysqli_stmt->close()
+#1 {main}
+  thrown in C:\xampp\htdocs\dentalClinicSystem\php\update_treatment.php on line 154

@@ -1,0 +1,148 @@
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover: #45a049;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --gray-light: #f8f9fa;
+    --gray-dark: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Varela Round;
+    line-height: 1.6;
+    color: var(--gray-dark);
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--gray-dark);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+input[type="file"] {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 1rem;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border-left: 4px solid transparent;
+}
+
+.alert-danger {
+    background-color: #fff5f5;
+    border-left-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    border-left-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.loading {
+    display: none;
+    margin-left: 1rem;
+    color: #666;
+}
+
+.loading.visible {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+

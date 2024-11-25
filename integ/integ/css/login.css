@@ -1,0 +1,231 @@
+/* loginStyle.css */
+:root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #adc7e0;
+    --accent-color: #000000;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --error-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 50%;
+    width: 900px;
+    max-width: 90%;
+}
+
+.brand-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 20px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.clinic-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.clinic-tagline {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.brand-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-size: cover;
+}
+
+.login-container {
+    margin-top: 2%;
+    padding: 40px;
+    width: 60%;
+}
+
+.login-form {
+    margin-top: 5%;
+}
+
+.title {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(21, 152, 149, 0.1);
+}
+
+.user-label {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 0 5px;
+    color: #777;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.input:focus + .user-label,
+.input:not(:placeholder-shown) + .user-label {
+    top: 0;
+    font-size: 12px;
+    color: var(--accent-color);
+}
+
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #003966;
+}
+
+.additional-options {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.forgot-password, .create-account {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover, .create-account:hover {
+    color: var(--primary-color);
+}
+
+.error-message {
+    margin-top: -20px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+    text-align: left;
+    height: auto;
+    overflow: hidden;
+    transition: opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+/* Show state */
+.error-message.show {
+    opacity: 1;
+}
+
+.reserved {
+    font-size: 13px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.637);
+}
+
+.line {
+    border: none;
+    border-top: 1px solid;
+    border-color: #ccc;
+    margin: 0 0 20px 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .brand-section, .login-container {
+        width: 100%;
+    }
+    .brand-section {
+        padding: 30px;
+    }
+}
